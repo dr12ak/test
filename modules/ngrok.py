@@ -10,8 +10,10 @@ def connect(token, port, options, domain=None):
             # token = authtoken:username:password
             token, username, password = token.split(':', 2)
             account = f"{username}:{password}"
-    
+
     # For all options see: https://github.com/ngrok/ngrok-py/blob/main/examples/ngrok-connect-full.py
+    if domain is not None:
+        options['domain'] = domain
     if not options.get('authtoken_from_env'):
         options['authtoken'] = token
     if account:
