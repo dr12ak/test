@@ -13,6 +13,7 @@ def connect(token, port, options, domain=None):
 
     # For all options see: https://github.com/ngrok/ngrok-py/blob/main/examples/ngrok-connect-full.py
     if domain is not None:
+        print(domain)
         options['domain'] = domain
     if not options.get('authtoken_from_env'):
         options['authtoken'] = token
