@@ -50,7 +50,6 @@ if not cmd_opts.share and not cmd_opts.listen:
 if cmd_opts.ngrok is not None:
     import modules.ngrok as ngrok
     print('ngrok authtoken detected, trying to connect...')
-    print(cmd_opts.ngrok_static_domain)
     ngrok.connect(
         cmd_opts.ngrok,
         cmd_opts.port if cmd_opts.port is not None else 7860,
